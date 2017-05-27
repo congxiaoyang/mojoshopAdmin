@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoJoshopAdmin - 用户管理 - 基本信息</title>
+    <meta name="viewport" content="width=device-width,user-scalable=yes" />
+    <meta name="keywords" content="摩捷国际科技（北京）有限公司，MoJoshopStore">
+    <link rel="shortcut icon" type="image/x-icon" href="../public/images/favicon.ico">
+
+    <link rel="stylesheet" href="../public/css/basic.css">
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/public.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap-select.css">
+    <link rel="stylesheet" href="css/user.css">
+    <script src="../public/js/jquery-3.1.1.min.js"></script>
+
+</head>
+<body>
+
+<header class="storeHead" id="storeHead"></header>
+
+<div class="view clearfix">
+    <aside class="main-sidebar"></aside>
+
+    <div class="storeMain">
+
+        <div class="mainInner">
+
+            <div class="clearfix">
+
+                <div class="publicForm fl">
+
+                    <form action="" class="form-horizontal">
+
+                        <div class="formTitle">
+
+                            <h6>基本信息</h6>
+
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">编号：</label>
+                            <div>
+                                <p id="number"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">昵称：</label>
+                            <div>
+                                <p id="nickname"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">等级：</label>
+                            <div>
+                                <p id="grade"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">邮箱：</label>
+                            <div>
+                                <p id="email"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">性别：</label>
+                            <div>
+                                <p id="sex"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">生日：</label>
+                            <div>
+                                <p id="birth"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group clearfix">
+                            <label for="">城市：</label>
+                            <div>
+                                <p id="city"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">状态：</label>
+                            <div style="width: 70%">
+                                <select name="" id="user_status" style="width: 100%;border: none">
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">真实姓名：</label>
+                            <div>
+                                <p id="realName"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">收货地址：</label>
+                            <div>
+                                <p id="deliveryAddress"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">消费积分：</label>
+                            <div>
+                                <p id="integral"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">登录时间：</label>
+                            <div>
+                                <p id="loginTime"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">更新时间：</label>
+                            <div>
+                                <p id="updateTime"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="">创建时间：</label>
+                            <div>
+                                <p id="createTime"></p>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="perInfoContainer fr">
+                    <div class="item item1">
+                        <h5 class="title">头像</h5>
+                        <div class="content tc relative">
+                            <!--<input type="file" name="file" class="squareBox" id="file">-->
+                            <img src="" id="avatar" class="img-circle" alt="">
+                        </div>
+                    </div>
+                    <div class="item item2">
+                        <h5 class="title">背景图</h5>
+                        <div class="content tc">
+                            <div class="">
+                                <!--<input type="file" name="file" class="wid-100">-->
+                                <img src="" id="background" class="wid-100" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="item item3">
+                        <h5 class="title">个性签名</h5>
+                        <div class="content text-left">
+                            <p id="intro" class="wid-100" style="height: 200px"></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../public/js/bootstrap.min.js"></script>
+<script src="../public/js/plugins/notice.js"></script>
+<script src="../public/js/menu.js"> </script>
+<script>
+    $.menuLoad("../");
+</script>
+<script src="../public/js/public.js"></script>
+<script>
+    $.headLoad("../")
+</script>
+<script src="js/change.js"></script>
+</body>
+</html>

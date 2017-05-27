@@ -1,0 +1,144 @@
+
+
+/* 首页专栏 banner 修改 */
+
+.bannerChangeMain .right{
+    width: 43.05%;
+}
+
+.bannerChangeMain .right .item{
+
+}
+.bannerChangeMain .title{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.bannerChangeMain .bannerItem h5{
+    margin-bottom: 1.5%;
+}
+.bannerChangeMain .bannerItem h5 span{
+    position: absolute;
+    margin-top: 5px;
+}
+.bannerChangeMain .right .item1 .content img{
+    width: 100%;
+}
+
+.bannerChangeMain .right .item2 .content img{
+    width: 75%;
+}
+
+.bannerChangeMain .left .item{
+    margin-top: 10%;
+}
+.bannerChangeMain .left .item .title{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.bannerChangeMain .left .item4 .content .img{
+    width: 40%;
+    margin: 0 auto;
+}
+.bannerChangeMain .left .item4 .content .img img{
+    width: 100%;
+}
+.bannerChangeMain .left .content{
+    margin-top: 4%;
+}
+
+.bannerChangeMain .content .img input{
+
+}
+
+.bannerChangeMain textarea{
+    font-size: 1.4rem;
+}
+
+.bannerAddMain input[type=file]{
+    height: 100%;
+    width: 100%;
+}
+
+.bannerAddMain .item{
+    margin-bottom: 50px;
+}
+
+.bannerAddMain .item .content textarea{
+    font-size: 1.6rem;
+}
+
+.bannerAddMain .item h5{
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.bannerAddMain .fn2 .storePic{
+    width: 80%;
+    margin: 0 auto;
+    height: 160%;
+}
+
+.bannerAddMain .formBox{
+    width: auto;
+}
+
+.bannerAddMain .formBox .form-group{
+    margin-bottom: 50px;
+}
+
+.bannerAddMain .formBox .form-group label{
+    width: 16%;
+    float: left;
+    text-align: right;
+}
+
+.bannerAddMain .formBox .form-group>div{
+    width: 80%;
+    float: right;
+}
+
+.bannerAddMain .formBox .form-group>div input[type=text]{
+    width: 100%;
+}
+
+.bannerAddMain .fn3 .left{
+    width: 30%;
+}
+.bannerAddMain .fn3 .right{
+    width: 65%;
+}
+.bannerAddMain h5{
+    text-align: center;
+}
+
+/*.bannerAddMain img{*/
+    /*width: 100%;*/
+/*}*/
+
+.bannerAddMain .selectStatus .radio label{
+    width: auto;
+    line-height: 50px;
+    padding-left: 34%;
+}
+
+.bannerAddMain .selectStatus .radio input{
+    margin-left: 20px;
+    margin-top: 0;
+}
+.bannerAddMain .selectStatus .radio{
+    border: 1px solid #979797;
+    height: 50px;
+}
+
+.bannerAddMain .selectStatus .radio:nth-of-type(2){
+    float: right;
+}
+.bannerAddMain .fn2 .applyBtnItem{
+    width: 66.666%;
+    margin: 0 auto;
+}
+.bannerAddMain .fn3{
+    margin-top: 50px;
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoJoshopAdmin - 每周精选 - 修改</title>
+    <meta name="viewport" content="width=device-width,user-scalable=yes" />
+    <meta name="keywords" content="摩捷国际科技（北京）有限公司，MoJoshopStore">
+    <link rel="shortcut icon" type="image/x-icon" href="../../public/images/favicon.ico">
+
+    <link rel="stylesheet" href="../../public/css/basic.css">
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/public.css">
+
+    <link rel="stylesheet" href="../../public/css/plugins/flatpickr.min.css">
+    <script src="../../public/js/jquery-3.1.1.min.js"></script>
+    <script src="../../public/js/plugins/flatpickr.js"></script>
+
+    <script type="text/javascript">
+        var record={
+            num:""
+        };
+        var checkDecimal=function(n){
+            var decimalReg=/^\d{0,8}\.{0,1}(\d{1,2})?$/;//var decimalReg=/^[-\+]?\d{0,8}\.{0,1}(\d{1,2})?$/;
+            if(n.value!=""&&decimalReg.test(n.value)){
+                record.num=n.value;
+            }else{
+                if(n.value!=""){
+                    n.value=record.num;
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+
+<header class="storeHead"></header>
+
+<div class="view clearfix">
+
+    <aside class="main-sidebar">
+    </aside>
+
+    <div class="storeMain">
+
+        <div class="mainInner">
+
+            <div class="formBox">
+
+                <form action="" class="form-horizontal">
+                    <div class="itemBox">
+
+                        <div>
+
+                            <div class="form-group">
+                                <label for="">商家图片</label>
+                                <div class="storePic storePicSmall br-3" id="storePicBox">
+                                    <img src="" id="storeImg" alt="">
+                                    <input type="file" id="storePic" class="" name="file">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">商家简介</label>
+                                <div>
+                                    <textarea class="wid-100 br-3 public-border" name="" id="storeIntro" rows="5" maxlength="200"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">商家链接</label>
+                                <div>
+                                    <input type="text" id="url">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">广告价格</label>
+                                <div>
+                                    <input type="text" id="ad_money" class="float_price" maxlength="10" onkeyup='checkDecimal(this)'>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">开始时间</label>
+                                <div>
+                                    <input id="startTime" class=flatpickr data-enable-time=true data-enable-seconds=true  placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">结束时间</label>
+                                <div>
+                                    <input id="endTime" class=flatpickr data-enable-time=true data-enable-seconds=true  placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group selectStatus">
+
+                                <label for="">状态</label>
+
+                                <div class="clearfix">
+
+                                    <div class="radio col-lg-5 col-md-5 col-sm-5 col-xs-5 fl">
+
+                                        <input type="radio" name="status" value="1" id="putaway" checked>
+
+                                        <label for="putaway">上架</label>
+                                    </div>
+
+                                    <div class="radio col-lg-5 col-md-5 col-sm-5 col-xs-5 fr" style="float: right;">
+
+                                        <input type="radio" name="status" value="0" id="soldOut">
+                                        <label for="soldOut">下架</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group" style="margin-top: 50px">
+
+                                <label for=""></label>
+                                <div class="tc">
+                                    <a href="javascript:void (0)" class="myBtn myBtn3" id="submit">完成</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--<div class="submitBtn tc">-->
+
+                    <!--<a href="ad_search.html" class="myBtn myBtn3" data-toggle="modal" data-target=".bs-example-modal-sm">完成</a>-->
+                    <!--</div>-->
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../../public/js/bootstrap.min.js"></script>
+<script src="../../public/js/plugins/notice.js"></script>
+<script src="js/change.js"></script>
+<script src="../../public/js/menu.js"> </script>
+<script>
+    $.menuLoad("../../");
+</script>
+<script src="../../public/js/public.js"></script>
+<script>
+    $.headLoad("../../");
+    $(".flatpickr").flatpickr();
+</script>
+
+
+</body>
+</html>

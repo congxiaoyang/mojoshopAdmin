@@ -1,0 +1,11 @@
+
+#searchStore_tbody tr{
+    cursor: pointer;
+}
+
+#searchEvaluate_tbody .operateIcon a:last-of-type{
+    margin-left: 0;
+}
+#searchEvaluate_tbody td.name{
+    width: 25%;
+}

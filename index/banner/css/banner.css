@@ -1,0 +1,180 @@
+
+.platformAddMain .bannerItem{
+    width: 50%;
+}
+.platformAddMain .bannerItem input[type=file]{
+    width: 100%;
+}
+
+.platformAddMain .bannerItem .storePic{
+    padding-bottom: 26%;
+}
+
+.platformAddMain .item h5{
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.platformAddMain .dateItem{
+    width: 40%;
+    margin-left: 6%;
+}
+
+.platformAddMain .dateItem .formBox{
+    width: 100%;
+}
+
+.platformAddMain .dateItem .formBox .form-group>label{
+    float: left;
+    width: 22%;
+    font-size: 1.4rem;
+}
+.platformAddMain .dateItem .formBox .form-group.selectStatus .publicRadio label{
+    font-size: 1.4rem;
+}
+
+.platformAddMain .dateItem .formBox .form-group{
+    margin-bottom: 15px;
+}
+
+.platformAddMain .dateItem .formBox .form-group>div{
+    float: left;
+    width: 44%;
+    margin-left: 2%;
+}
+
+.platformAddMain .dateItem .formBox .form-group-type>div{
+    width: 76%;
+}
+.platformAddMain .dateItem .formBox .form-group-type>div .radio:nth-child(2),
+.platformAddMain .dateItem .formBox .form-group-type>div .radio:last-of-type{
+    margin-left: 6%;
+}
+
+.platformAddMain .fn4{
+    margin-top: 50px;
+}
+
+.platformAddMain .fn4 .content{
+    min-height: 500px;
+}
+
+.infoRight{
+    width: 50%;
+}
+.infoLeft{
+    width: 46%;
+    margin-left: 4%;
+}
+
+.infoLeft .item4 .img{
+    width: 30%;
+    margin: 0 auto;
+    -webkit-background-size:40%;
+    background-size:40%;
+}
+
+.infoLeft .item4 .img img{
+    width: 100%;
+}
+.infoLeft .item4 .img input{
+    height: 100%;
+}
+
+.bannerItem .item6 .img {
+    width: 50%;
+    margin: 0 auto;
+    -webkit-background-size:30%;
+    background-size:30%;
+}
+
+.bannerItem .item6 .img img{
+    width: 100%;
+}
+
+.platformAddMain .item7{
+    width: 60%;
+    margin: auto;
+}
+
+.platformAddMain .item7 .content{
+    -webkit-background-size:20%;
+    background-size:20%;
+}
+
+.goDetails{
+    cursor: pointer;
+}
+
+
+/* banner 详情 */
+
+.bannerDetailsMain .bannerDetails{
+    width: 100%;
+}
+
+.bannerDetailsMain .perInfoContainer .item{
+    margin-bottom: 50px;
+}
+
+.bannerDetailsMain .perInfoContainer .itemBanner .content{
+    height: 300px;
+}
+
+.bannerDetailsMain .perInfoContainer .itemBanner .content input{
+    width: 100%;
+}
+.bannerDetailsMain .perInfoContainer .itemBanner .content img,
+.bannerDetailsMain .perInfoContainer .item1 .content img{
+    width: 100%;
+}
+
+.bannerDetailsMain .perInfoContainer .item1 .bgPic{
+   padding-bottom: 138%;
+}
+
+.bannerDetailsMain .leftInfo .publicForm{
+    width: 100%;
+}
+
+.bannerDetailsMain .item h5{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.bannerDetailsMain .item .content{
+    margin-top: 20px;
+}
+
+.bannerDetailsMain .item2 .content{
+    width: 80%;
+    margin: 20px auto 0 auto;
+    padding-bottom: 30%;
+}
+.bannerDetailsMain .item4 .content{
+    width: 30%;
+    margin: 20px auto 0 auto;
+    padding-bottom: 30%;
+}
+
+.bannerDetailsMain .item .content img{
+    width: 100%;
+}
+
+.bannerDetailsMain .item5 textarea{
+    min-height: 200px;
+    font-size: 1.4rem;
+}
+
+.bannerDetailsMain .item3 #editor{
+    min-height: 180px;
+}
+
+
+
+/* 消除user 样式中的冲突*/
+
+.perInfoContainer .item1 .content input{
+    width: 100%;
+}

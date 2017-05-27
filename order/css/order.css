@@ -1,0 +1,15 @@
+
+
+/* 搜索订单先进入 商品搜索  */
+
+/*#search_tbody tr{*/
+    /*cursor: pointer;*/
+/*}*/
+
+.searchOrderMain .mainInner{
+    padding-top: 2%;
+}
+
+.searchOrderMain .mainInner>div.row{
+    margin-bottom: 2%;
+}

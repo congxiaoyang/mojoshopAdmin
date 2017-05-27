@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoJoshopAdmin - banner - 详情</title>
+    <meta name="viewport" content="width=device-width,user-scalable=yes" />
+    <meta name="keywords" content="摩捷国际科技（北京）有限公司，MoJoshopStore">
+    <link rel="shortcut icon" type="image/x-icon" href="../../public/images/favicon.ico">
+
+    <link rel="stylesheet" href="../../public/css/basic.css">
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/public.css">
+    <link rel="stylesheet" href="../../user/css/user.css">
+    <link rel="stylesheet" href="../../public/css/plugins/flatpickr.min.css">
+    <link rel="stylesheet" href="css/banner.css">
+
+    <script src="../../public/js/jquery-3.1.1.min.js"></script>
+    <script src="../../public/js/plugins/flatpickr.js"></script>
+
+    <script src="../../public/js/plugins/ud/editor_config.js"></script>
+    <script src="../../public/js/plugins/ud/editor_all.js"></script>
+    <script src="../../public/js/plugins/ud/uparse.js"></script>
+    <script src="../../public/js/plugins/ud/lang/zh-cn/zh-cn.js"></script>
+
+    <script type="text/javascript">
+        var record={
+            num:""
+        };
+        var checkDecimal=function(n){
+            var decimalReg=/^\d{0,8}\.{0,1}(\d{1,2})?$/;//var decimalReg=/^[-\+]?\d{0,8}\.{0,1}(\d{1,2})?$/;
+            if(n.value!=""&&decimalReg.test(n.value)){
+                record.num=n.value;
+            }else{
+                if(n.value!=""){
+                    n.value=record.num;
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+<header class="storeHead" id="storeHead"></header>
+
+<div class="view clearfix">
+    <aside class="main-sidebar"></aside>
+
+    <div class="storeMain bannerDetailsMain">
+
+        <div class="mainInner">
+
+            <div class="perInfoContainer bannerDetails">
+                <div class="item itemBanner">
+                    <h5 class="title">banner <span class="fs-14">(点击修改 图片上传尺寸1280*400)</span></h5>
+                    <div class="content tc relative storePic">
+                        <input type="file" name="file" class="bannerDetailsUpload" id="bannerBtn">
+                        <img src="../../public/images/pictures.png" class="" alt="" id="bannerImg">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="clearfix">
+
+                <div class="fl leftInfo" style="width: 50%">
+
+                    <div class="publicForm wid-100">
+
+                        <form action="" class="form-horizontal">
+
+                            <div class="formTitle">
+
+                                <h6>基本信息</h6>
+
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="">编号：</label>
+                                <div>
+                                    <p id="id"></p>
+                                </div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="">举办方名称：</label>
+                                <div>
+                                    <p id="hostName"></p>
+                                </div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="">活动主题：</label>
+                                <div>
+                                    <p id="activityTheme"></p>
+                                </div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="">广告价格：</label>
+                                <div>
+                                    <p class="redMark">¥<span id="adMoney"></span></p>
+                                </div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="">报名价格：</label>
+                                <div>
+
+                                    <p class="redMark">¥<input type="text" value="2000.00" id="signupMoney" class="float_price" maxlength="10" onkeyup='checkDecimal(this)'></p>
+                                </div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="">状态：</label>
+                                <div style="width: 70%">
+                                    <select name="" id="status">
+                                        <option value="1">上架</option>
+                                        <option value="0">下架</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="">类型：</label>
+                                <div style="width: 70%">
+                                    <select name="" id="type">
+                                        <option value="1">banner</option>
+                                        <option value="2">专栏</option>
+                                        <option value="3">不展示</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group clearfix">
+                                <label for="">开始时间：</label>
+                                <div>
+                                    <input id="startTime" class=flatpickr data-enable-time=true data-enable-seconds=true  placeholder="">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group clearfix">
+                                <label for="">结束时间：</label>
+                                <div>
+                                    <input id="endTime" class=flatpickr data-enable-time=true data-enable-seconds=true  placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="">创建时间：</label>
+                                <div>
+                                    <p id="createTime"></p>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group clearfix">
+                                <label for="">更新时间：</label>
+                                <div>
+                                    <p id="updateTime"></p>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="item item4 mt-50">
+                        <h5 class="title">举办方logo</h5>
+                        <div class="content tc relative storePic bgPic">
+                            <input type="file" name="file" class="bannerDetailsUpload" id="hostLogoBtn">
+                            <img src="../../public/images/pictures.png" class="" id="hostLogo" alt="">
+                        </div>
+                    </div>
+
+                    <div class="item item5 mt-50">
+                        <h5 class="title">举办方简介</h5>
+                        <div class="content text-left">
+                            <textarea id="hostIntro" class="wid-100"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="perInfoContainer fr">
+
+                    <div class="item item1">
+                        <h5 class="title">活动背景</h5>
+                        <div class="content tc relative storePic bgPic">
+                            <input type="file" name="file" class="wid-100 bannerDetailsUpload" id="activityBgBtn">
+                            <img src="../../public/images/pictures.png" class="" id="activityBgImg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="item item2">
+                        <h5 class="title">报名按钮</h5>
+                        <div class="content tc relative storePic bgPic">
+                            <input type="file" name="file" class="bannerDetailsUpload" id="signupBtn">
+                            <img src="../../public/images/btn.png" class="" id="signupImg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="item item2">
+                        <h5 class="title">专栏图</h5>
+                        <div class="content tc relative storePic bgPic" style="padding-bottom: 80%">
+                            <input type="file" name="file" class="bannerDetailsUpload" id="columnBtn">
+                            <img src="../../public/images/btn.png" class="" id="columnImg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="item item3">
+                        <h5 class="title">活动简介</h5>
+                        <div class="content text-left">
+                            <script id="editor" type="text/plain"></script>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- submit-->
+            <div class="submitBox tc">
+                <a href="javascript:void (0)" class="myBtn myBtn3" id="submit">提交</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../../public/js/bootstrap.min.js"></script>
+<script src="../../public/js/plugins/notice.js"></script>
+<script src="../../public/js/menu.js"> </script>
+<script>
+    $.menuLoad("../../");
+</script>
+<script src="../../public/js/public.js"></script>
+<script>
+    $.headLoad("../../");
+    $(".flatpickr").flatpickr();
+</script>
+
+<script>
+
+    UE.getEditor('editor',{
+        initialFrameWidth:450,
+        initialFrameHeight:400,
+        imagePopup:false
+    });
+
+</script>
+<script src="js/change.js"></script>
+</body>
+</html>

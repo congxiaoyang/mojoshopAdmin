@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoJoshopAdmin - 用户反馈 - 已处理</title>
+    <meta name="viewport" content="width=device-width,user-scalable=yes" />
+    <meta name="keywords" content="摩捷国际科技（北京）有限公司，MoJoshopStore">
+    <link rel="shortcut icon" type="image/x-icon" href="../public/images/favicon.ico">
+
+    <link rel="stylesheet" href="../public/css/basic.css">
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/public.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap-select.css">
+    <link rel="stylesheet" href="../public/css/plugins/jquery.dialogbox.css">
+    <link rel="stylesheet" href="css/feedback.css">
+    <script src="../public/js/jquery-3.1.1.min.js"></script>
+
+</head>
+<body>
+
+<header class="storeHead" id="storeHead"></header>
+
+<div class="view clearfix">
+
+    <aside class="main-sidebar"></aside>
+
+    <div class="storeMain">
+
+        <div class="mainInner relative">
+
+            <div class="searchBox clearfix">
+                <div class="fl input"><input type="text" id="search" placeholder="搜索反馈内容"></div>
+                <div class="fr searchIcon"><a href="javascript:void (0)"><img src="../public/images/searchPic.png" alt=""></a></div>
+            </div>
+
+            <div class="pubList">
+                <table>
+                    <thead>
+
+                    <tr>
+
+                        <td>编号</td>
+                        <td class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown-menu">反馈类型 <b class="caret"></b></a>
+                            <ul class="dropdown-menu hide">
+                                <li><a href="#" data-value="1" class="status_search" id="putaway_search">社交活动</a></li>
+                                <li><a href="#" data-value="2" class="status_search" id="">商品相关</a></li>
+                                <li><a href="#" data-value="3" class="status_search" id="">客户服务</a></li>
+                                <li><a href="#" data-value="4" class="status_search" id="">商家入驻</a></li>
+                                <li><a href="#" data-value="5" class="status_search" id="">其他</a></li>
+
+                            </ul>
+
+                        </td>
+                        <td>附加图片</td>
+                        <td>反馈内容</td>
+                        <td>联系邮箱</td>
+                        <td>创建时间</td>
+                        <td>状态</td>
+                        <td>操作</td>
+
+                    </tr>
+
+                    </thead>
+                    <tbody id="processed_tbody">
+
+
+                    </tbody>
+                </table>
+
+                <div id="page" class="page">
+
+                </div>
+
+            </div>
+
+            <div id="btn-dialogBox"></div>
+
+            <div class="bigPicBox">
+                <img src="" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../public/js/bootstrap.min.js"></script>
+<script src="../public/js/plugins/laypage.js"></script>
+<script src="../public/js/plugins/notice.js"></script>
+<script src="../public/js/plugins/jquery.dialogBox.js"></script>
+<script src="js/processed.js"></script>
+<script src="../public/js/menu.js"> </script>
+<script>
+    $.menuLoad("../");
+</script>
+<script src="../public/js/public.js"></script>
+<script>
+    $.headLoad("../")
+</script>
+
+</body>
+</html>

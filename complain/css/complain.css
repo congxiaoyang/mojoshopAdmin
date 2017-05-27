@@ -1,0 +1,15 @@
+
+/*  */
+
+#untreated_tbody td select{
+    padding: 10px 5px;
+}
+
+#untreated_tbody td
+{
+    width: 11.11%;
+}
+
+#processed_tbody td{
+    width: 10%;
+}

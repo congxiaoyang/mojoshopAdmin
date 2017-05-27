@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoJoshopAdmin - 退款管理 - 未处理</title>
+    <meta name="viewport" content="width=device-width,user-scalable=yes" />
+    <meta name="keywords" content="摩捷国际科技（北京）有限公司，MoJoshopStore">
+    <link rel="shortcut icon" type="image/x-icon" href="../public/images/favicon.ico">
+
+    <link rel="stylesheet" href="../public/css/basic.css">
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/public.css">
+    <link rel="stylesheet" href="../public/css/plugins/jquery.dialogbox.css">
+    <script src="../public/js/jquery-3.1.1.min.js"></script>
+
+</head>
+<body>
+
+<header class="storeHead" id="storeHead"></header>
+
+<div class="view clearfix">
+
+    <aside class="main-sidebar"></aside>
+
+    <div class="storeMain searchOrderMain">
+
+        <div class="mainInner">
+
+            <div class="pubList">
+                <table class="table-hover table-td-15">
+                    <thead>
+
+                    <tr>
+
+                        <td>订单号</td>
+                        <td>退款原因</td>
+                        <td>退款说明</td>
+                        <td>退款账户</td>
+                        <td>账户类型</td>
+                        <td>真实姓名</td>
+                        <td>退款状态</td>
+                        <td>商品图片</td>
+                        <td>商品名称</td>
+                        <td>金额</td>
+                        <td>操作</td>
+
+                    </tr>
+
+                    </thead>
+                    <tbody id="re_pro_tbody">
+
+                    <!--<tr>-->
+                        <!--<td>12345465879</td>-->
+                        <!--<td>下错单</td>-->
+                        <!--<td class="name">接口的风景奥斯卡简介点击十大啊</td>-->
+                        <!--<td>145454564</td>-->
+                        <!--<td>支付宝</td>-->
+                        <!--<td>德玛西亚</td>-->
+                        <!--<td>未退款</td>-->
+                        <!--<td><img src="../public/images/pictures.png" alt=""></td>-->
+
+                        <!--<td>零食大礼包</td>-->
+                        <!--<td class="redMark">¥ <span>1000.00</span></td>-->
+
+                        <!--<td><input type="button" value="同意"></td>-->
+                    <!--</tr>-->
+
+                    </tbody>
+                </table>
+
+                <div id="page" class="page">
+
+                </div>
+
+                <div id="btn-dialogBox"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../public/js/bootstrap.min.js"></script>
+<script src="../public/js/plugins/laypage.js"></script>
+<script src="../public/js/plugins/notice.js"></script>
+<script src="../public/js/plugins/jquery.dialogBox.js"></script>
+<script src="js/pending.js"></script>
+<script src="../public/js/menu.js"> </script>
+<script>
+    $.menuLoad("../");
+</script>
+<script src="../public/js/public.js"></script>
+<script>
+    $.headLoad("../")
+</script>
+</body>
+</html>

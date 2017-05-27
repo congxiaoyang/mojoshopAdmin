@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoJoshopAdmin - 首页专栏banner - 修改</title>
+    <meta http-equiv="Content-Type" name="viewport" content="width=device-width,user-scalable=yes" />
+    <meta name="keywords" content="摩捷国际科技（北京）有限公司，MoJoshopStore">
+    <link rel="shortcut icon" type="image/x-icon" href="../../public/images/favicon.ico">
+
+    <link rel="stylesheet" href="../../public/css/basic.css">
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/public.css">
+    <link rel="stylesheet" href="../../public/css/plugins/flatpickr.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/platform.css">
+
+    <script src="../../public/js/jquery-3.1.1.min.js"></script>
+    <script src="../../public/js/plugins/flatpickr.js"></script>
+
+    <script src="../../public/js/plugins/ud/editor_config.js"></script>
+    <script src="../../public/js/plugins/ud/editor_all.js"></script>
+    <script src="../../public/js/plugins/ud/uparse.js"></script>
+    <script src="../../public/js/plugins/ud/lang/zh-cn/zh-cn.js"></script>
+    <style>
+        #editor{
+            height: 400px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var record={
+            num:""
+        };
+        var checkDecimal=function(n){
+            var decimalReg=/^\d{0,8}\.{0,1}(\d{1,2})?$/;//var decimalReg=/^[-\+]?\d{0,8}\.{0,1}(\d{1,2})?$/;
+            if(n.value!=""&&decimalReg.test(n.value)){
+                record.num=n.value;
+            }else{
+                if(n.value!=""){
+                    n.value=record.num;
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+<header class="storeHead" id="storeHead"></header>
+
+<div class="view clearfix">
+    <aside class="main-sidebar"></aside>
+
+    <div class="storeMain platformAddMain">
+
+        <div class="mainInner">
+
+            <div style="padding-top: 3.52%">
+
+                <div class="clearfix">
+
+                    <div class="item bannerItem fl">
+
+                        <h5 class="tc">banner</h5>
+
+                        <div class="relative storePic">
+                            <input type="file" name="file" id="bannerPic" class="picAdd">
+                            <img src="" class="wid-100" id="platformBanner" alt="">
+                        </div>
+                    </div>
+
+                    <div class="fl dateItem">
+
+                        <div class="formBox">
+                            <form action="" class="form-horizontal ">
+
+                                <div class="form-group clearfix">
+                                    <label for="">开始时间</label>
+                                    <div>
+                                        <input id="startTime" class=flatpickr data-enable-time=true data-enable-seconds=true  placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="">结束时间</label>
+                                    <div>
+                                        <input id="endTime" class=flatpickr data-enable-time=true data-enable-seconds=true  placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group selectStatus">
+
+                                    <label for="">状态</label>
+
+                                    <div class="clearfix">
+
+                                        <div class="radio publicRadio fl">
+                                            <label for="putaway">上架</label>
+                                            <input type="radio" name="status" id="putaway" value="1">
+                                        </div>
+
+                                        <div class="radio publicRadio fr">
+                                            <label for="downaway">下架</label>
+                                            <input type="radio" name="status" id="downaway" value="0">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="fn4">
+                    <div class="item">
+                        <div class="content" style="width: 100%">
+
+                            <script id="editor" type="text/plain"></script>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tc submitBtnBox mt-50">
+                <a href="javascript:void (0)" class="myBtn myBtn3" id="submit">完成</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../../public/js/bootstrap.min.js"></script>
+<script src="../../public/js/plugins/notice.js"></script>
+<script type="text/javascript" src="js/change.js"></script>
+<script src="../../public/js/menu.js"> </script>
+<script>
+    $.menuLoad("../../");
+</script>
+<script src="../../public/js/public.js"></script>
+<script>
+    $.headLoad("../../");
+    $(".flatpickr").flatpickr();
+</script>
+<script type="text/javascript">
+
+    UE.getEditor('editor',{
+        initialFrameWidth:960,
+        initialFrameHeight:400
+    });
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+/* 管理员部分 -- 添加 */
+
+.adminAddMain .formBox{
+    width: 37.96%;
+}
+
+.adminAddMain .formBox .itemBox>div .form-group>div input{
+    border-radius: 0;
+}
+
+.adminAddMain .formBox .itemBox>div .form-group{
+    margin-bottom: 20px;
+}
+
+.adminAddMain .formBox .itemBox>div .form-group label{
+    font-size: 1.4rem;
+}
+
+.adminAddMain .formBox .avatarBox{
+    padding-left: 19.5%;
+    margin-bottom: 20px;
+}
+.adminAddMain .formBox .avatarBox h6{
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.adminAddMain .formBox .avatarBox .pic{
+    text-align: center;
+    width: 50%;
+    overflow: hidden;
+    margin:  0 auto;
+}
+
+.adminAddMain .formBox .avatarBox .pic img{
+    width: 100%;
+    height: 100%;
+}

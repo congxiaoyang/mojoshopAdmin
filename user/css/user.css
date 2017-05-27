@@ -1,0 +1,58 @@
+
+/* 用户 - 修改（展示信息，只修改状态） */
+
+.perInfoContainer{
+    width: 43.05%;
+}
+
+.perInfoContainer .item{
+    margin-bottom: 10.75%;
+}
+.perInfoContainer .item .title{
+    font-size: 2rem;
+    text-align: center;
+}
+.perInfoContainer .item .content{
+    margin-top: 20px;
+}
+.perInfoContainer .item1 .content img,
+.perInfoContainer .item1 .content input{
+    width: 43.01%;
+}
+.perInfoContainer .item1 .content input{
+    display: inline-block;
+    position: absolute;
+}
+
+.perInfoContainer .item2 .content .storePic{
+    width: 82.36%;
+    margin:  0 auto;
+}
+.perInfoContainer textarea{
+    font-size: 1.4rem;
+}
+
+
+/*  生活照 模块  */
+.lifePics{
+    width: 64.81%;
+    margin: 42px auto;
+}
+
+.lifePics h5{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.lifePics .row>div{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.lifePics .row>div img{
+    width: 80%;
+}
+
+.userBasicInfoMain tbody td{
+    width: 9.0909%;
+}

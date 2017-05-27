@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>MoJoshopAdmin - 首页专栏banner - 增加</title>
+    <meta http-equiv="Content-Type" name="viewport" content="width=device-width,user-scalable=yes" />
+    <meta name="keywords" content="摩捷国际科技（北京）有限公司，MoJoshopStore">
+    <link rel="shortcut icon" type="image/x-icon" href="../../public/images/favicon.ico">
+
+    <link rel="stylesheet" href="../../public/css/basic.css">
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/public.css">
+    <link rel="stylesheet" href="../../public/css/plugins/flatpickr.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/banner.css">
+
+    <script src="../../public/js/jquery-3.1.1.min.js"></script>
+    <script src="../../public/js/plugins/flatpickr.js"></script>
+
+    <script src="../../public/js/plugins/ud/editor_config.js"></script>
+    <script src="../../public/js/plugins/ud/editor_all.js"></script>
+    <script src="../../public/js/plugins/ud/uparse.js"></script>
+    <script src="../../public/js/plugins/ud/lang/zh-cn/zh-cn.js"></script>
+
+    <style>
+        #editor{
+            width: 100%;
+            min-height: 200px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var record={
+            num:""
+        };
+        var checkDecimal=function(n){
+            var decimalReg=/^\d{0,8}\.{0,1}(\d{1,2})?$/;//var decimalReg=/^[-\+]?\d{0,8}\.{0,1}(\d{1,2})?$/;
+            if(n.value!=""&&decimalReg.test(n.value)){
+                record.num=n.value;
+            }else{
+                if(n.value!=""){
+                    n.value=record.num;
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+<header class="storeHead" id="storeHead"></header>
+
+<div class="view clearfix">
+    <aside class="main-sidebar"></aside>
+
+    <div class="storeMain platformAddMain">
+
+        <div class="mainInner">
+
+            <div style="padding-top: 3.52%" class="clearfix">
+
+                <div class="clearfix">
+
+                    <div class="fl bannerItem">
+
+                        <div class="item">
+
+                            <h5 class="tc">banner</h5>
+
+                            <div class="relative storePic">
+                                <input type="file" name="file" id="bannerPic" class="picAdd">
+                                <img src="" class="wid-100" id="bannerImg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="item item6 mt-50">
+                            <h5 class="title">专栏图</h5>
+                            <div class="content tc">
+                                <div class="img relative storePic" style="padding-bottom: 50%">
+
+                                    <input type="file" name="file" id="columnPic" class="picChange picAdd wid-100">
+                                    <img src="" class="" alt="">
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="fl dateItem">
+
+                        <div class="formBox">
+                            <form action="" class="form-horizontal ">
+
+                                <div class="form-group clearfix">
+                                    <label for="">广告价格</label>
+                                    <div>
+                                        <input type="text" id="adMoney" class="float_price" maxlength="10" onkeyup='checkDecimal(this)'>
+                                    </div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="">报名费</label>
+                                    <div>
+                                        <input type="text" id="entryFee" class="float_price" maxlength="10" onkeyup='checkDecimal(this)'>
+                                    </div>
+                                </div>
+
+                                <div class="form-group selectStatus">
+
+                                    <label for="">状态</label>
+
+                                    <div class="clearfix">
+
+                                        <div class="radio publicRadio fl">
+                                            <label for="putaway">上架</label>
+                                            <input type="radio" name="status" id="putaway" value="1">
+                                        </div>
+
+                                        <div class="radio publicRadio fr">
+                                            <label for="downaway">下架</label>
+                                            <input type="radio" name="status" id="downaway" value="0">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group selectStatus form-group-type">
+
+                                    <label for="">类型</label>
+
+                                    <div class="clearfix">
+
+                                        <div class="radio publicRadio fl">
+                                            <label for="banner">banner</label>
+                                            <input type="radio" name="type" id="banner" value="1">
+                                        </div>
+
+                                        <div class="radio publicRadio fl">
+                                            <label for="column">专栏</label>
+                                            <input type="radio" name="type" id="column" value="2">
+                                        </div>
+
+                                        <div class="radio publicRadio fl">
+                                            <label for="blank">不展示</label>
+                                            <input type="radio" name="type" id="blank" value="3">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="">举办方名称</label>
+                                    <div>
+                                        <input type="text" id="hostName">
+                                    </div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="">活动主题</label>
+                                    <div>
+                                        <input type="text" id="activityTheme">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group clearfix">
+                                    <label for="">开始时间</label>
+                                    <div>
+                                        <input id="startTime" class=flatpickr data-enable-time=true data-enable-seconds=true  placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="">结束时间</label>
+                                    <div>
+                                        <input id="endTime" class=flatpickr data-enable-time=true data-enable-seconds=true  placeholder="">
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="clearfix mt-50">
+
+                    <div class="infoRight right fl">
+
+                        <div class="item item1">
+                            <h5 class="title">活动背景</h5>
+                            <div class="content tc relative storePic" style="padding-bottom: 150%">
+                                <input type="file" name="file" class="picChange wid-100 picAdd" id="activityBg" style="height: 100%">
+                                <img src="" class="wid-100" alt="">
+                            </div>
+                        </div>
+
+                        <div class="item item7">
+                            <h5 class="title">活动按钮背景</h5>
+                            <div class="content tc relative storePic" style="padding-bottom: 30%">
+                                <input type="file" name="file" class="picChange wid-100 picAdd" id="activityBtnBg" style="height: 100%">
+                                <img src="" class="wid-100" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="infoLeft fr">
+
+                        <div class="item item4">
+                            <h5 class="title">举办方logo</h5>
+                            <div class="content tc">
+                                <div class="img relative storePic" style="padding-bottom: 30%">
+
+                                    <input type="file" name="file" id="logo" class="picChange picAdd wid-100">
+                                    <img src="" class="" alt="">
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="item item5 mt-50">
+                            <h5 class="title">举办方简介</h5>
+                            <div class="content text-left">
+                                <textarea class="wid-100 fs-14" id="hostIntro" style="height: 200px"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="item item3 mt-50">
+                            <h5 class="title">活动简介</h5>
+                            <div class="content text-left">
+                                <script id="editor" type="text/plain"></script>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="tc submitBtnBox mt-50">
+                <a href="javascript:void (0)" class="myBtn myBtn3" id="submit">完成</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../../public/js/bootstrap.min.js"></script>
+<script src="../../public/js/plugins/notice.js"></script>
+<script src="../../public/js/menu.js"> </script>
+<script>
+    $.menuLoad("../../");
+</script>
+<script src="../../public/js/public.js"></script>
+<script>
+    $.headLoad("../../");
+    $(".flatpickr").flatpickr();
+</script>
+
+<script>
+
+    UE.getEditor('editor',{
+        initialFrameWidth:450,
+        initialFrameHeight:400,
+        imagePopup:false
+    });
+
+</script>
+
+<script type="text/javascript" src="js/add.js"></script>
+
+</body>
+</html>

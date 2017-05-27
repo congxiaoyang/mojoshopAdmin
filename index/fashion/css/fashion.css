@@ -1,0 +1,48 @@
+
+
+.formBox .itemBox .selectStatus{
+    /*width: 50%;*/
+    margin: 0 auto;
+}
+
+.formBox .itemBox .selectStatus .radio{
+    border: 1px solid #979797;
+    line-height: 50px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+
+.formBox .itemBox .selectStatus .radio input{
+    /*margin-right: 20px;*/
+    /*margin-left: -36px;*/
+    width: auto;
+    height: auto;
+}
+
+.storePic{
+    border: 1px solid #979797;
+    background-image: url(../../../public/images/uploadBig.png);
+    background-position: center;
+    background-repeat:no-repeat;
+    position: relative;
+}
+
+.storePicBig{
+    padding-bottom: 140%;
+}
+
+.storePicSmall{
+    padding-bottom: 70.92%;
+}
+
+.storePic input{
+    height: 100%;
+}
+.storePic img{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+}

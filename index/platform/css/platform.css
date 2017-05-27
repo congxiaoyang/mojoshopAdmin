@@ -1,0 +1,50 @@
+
+.platformAddMain .bannerItem{
+    width: 53.51%;
+}
+.platformAddMain .bannerItem input[type=file]{
+    width: 100%;
+}
+
+.platformAddMain .bannerItem .storePic{
+    padding-bottom: 36%;
+}
+
+.platformAddMain .item h5{
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.platformAddMain .dateItem{
+    width: 40%;
+    margin-left: 6%;
+    margin-top: 4%;
+}
+
+.platformAddMain .dateItem .formBox{
+    width: 100%;
+}
+
+.platformAddMain .dateItem .formBox .form-group>label{
+    float: left;
+    width: 18%;
+}
+
+.platformAddMain .dateItem .formBox .form-group{
+    margin-bottom: 15px;
+}
+
+.platformAddMain .dateItem .formBox .form-group>div{
+    float: left;
+    width: 44%;
+    margin-left: 10%;
+}
+
+.platformAddMain .fn4{
+    margin-top: 50px;
+}
+
+.platformAddMain .fn4 .content{
+    min-height: 500px;
+}
