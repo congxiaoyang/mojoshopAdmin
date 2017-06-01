@@ -10,6 +10,11 @@
     width: 11.11%;
 }
 
+#untreated_tbody td img,
+#processed_tbody td img{
+    width: 100%;
+}
+
 #processed_tbody td{
     width: 10%;
 }

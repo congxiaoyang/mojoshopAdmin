@@ -115,6 +115,7 @@ $.extend({'menuLoad':function (src) {
         '                </a>'+
         '                <ul class="treeview-menu sec-menu">'+
         '                    <li><a href="' + src + 'order/search_store.html"><i class="iconfont"></i> 订单查询 </a></li>'+
+        '                    <li><a href="' + src + 'order/activity_order.html"><i class="iconfont"></i> 活动订单 </a></li>'+
         '                </ul>'+
         '            </li>'+
         '            <li class="treeview">'+

@@ -22,7 +22,7 @@ function pageLoad(curr,grageStatus,searchCon) {
         dataType:"json",
         data:{
             "page":curr || 1,
-            "rows":2,    //显示的行数
+            "rows":20,    //显示的行数
             "search":searchCon,
             "status":grageStatus,
             "id":thisId

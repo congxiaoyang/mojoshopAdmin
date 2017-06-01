@@ -114,6 +114,9 @@ $("#submit").click(function () {
                 if(arr.status==200){
 
                     notie.alert(1, '修改成功!', 2);
+                    setTimeout(function () {
+                        window.location.href = "./search.html";
+                    },800)
 
                 }else{
                     notie.alert(3, '服务器繁忙，请稍后重试', 2);

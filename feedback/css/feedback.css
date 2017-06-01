@@ -1,4 +1,7 @@
 
+.pubList table tbody td{
+    width: 12.5%;
+}
 .pubList table tbody td img{
     width: 60%;
     cursor: pointer;

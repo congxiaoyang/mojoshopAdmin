@@ -14,7 +14,7 @@ function pageLoad(curr,putawayStatus) {
         dataType:"json",
         data:{
             "page":curr || 1,
-            "rows":2,    //显示的行数
+            "rows":20,    //显示的行数
             "type":1,
             "status":putawayStatus
         },
@@ -42,18 +42,32 @@ function pageLoad(curr,putawayStatus) {
                             dataStatus = "下架"
                         }
 
+                        var startDateAndTime = ge_time_format(data[i].startTime).split(" ");
+                        var startDate = startDateAndTime[0];
+                        var startTime = startDateAndTime[1];
+
+                        var endDateAndTime = ge_time_format(data[i].endTime).split(" ");
+                        var endDate = endDateAndTime[0];
+                        var endTime = endDateAndTime[1];
+
+                        var adminName = "";
+                        if(data[i].adminName==null){
+                            adminName = "-"
+                        }else{
+                            adminName = data[i].adminName;
+                        }
 
                         str += '<tr data-id = "' + data[i].aboradId+'">' +
                             '<td class="wideTd">'+ data[i].aboradId +'</td> ' +   //编号
-                            '<td><img src="' + data[i].storeImage + '" class="" alt="图片加载失败"></td> ' +   // 商家图片
+                            '<td><img src="' + data[i].storeImage + '" class="img-largen" alt="图片加载失败"></td> ' +   // 商家图片
                             '<td class="name" title="'+data[i].storeUrl+'"><a href="'+data[i].storeUrl+'">'+data[i].storeUrl+'</a></td> ' +  // 商家链接
                             '<td class="name" title="'+data[i].context+'">'+ data[i].context +'</td> ' +  // 商家简介
                             '<td class="redMark">￥'+ toDecimal2(data[i].price) +'</td> ' +  // 广告价格
                             '<td>'+ dataStatus +'</td> ' +  // 状态
                             '<td>留学出境</td> ' +  // 分类
-                            '<td class="wideTd">'+ ge_time_format(data[i].startTime) +'</td> ' +  // 开始时间
-                            '<td class="wideTd">'+ ge_time_format(data[i].endTime) +'</td> ' +  // 结束时间
-                            '<td class="">'+ data[i].adminName +'</td> ' +  // 管理员
+                            '<td class="wideTd date"><p>'+startDate+'</p><p>'+startTime+'</p></td> ' +  // 开始时间
+                            '<td class="wideTd date"><p>'+endDate+'</p><p>'+endTime+'</p></td> ' +  // 结束时间
+                            '<td class="">'+ adminName +'</td> ' +  // 管理员
                             '<td class="operateIcon">' +
                             '<p><a href="javascript:void (0)" style="margin-left: 0" class="deleteBtn"><i class="iconfont">&#xe601;</i></a></p>'+
                             '<p><a href="#" class="changeBtn"><i class="iconfont">&#xe630;</i></a></p>'+

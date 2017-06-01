@@ -14,7 +14,7 @@ function pageLoad(curr,searchCon) {
         // async:false,
         data:{
             "page":curr || 1,
-            "rows":2,    //显示的行数
+            "rows":20,    //显示的行数
             "search":searchCon
         },
         timeout:5000,
@@ -33,14 +33,22 @@ function pageLoad(curr,searchCon) {
                 }else{
                     for(var i in data){
 
+                        var createDateAndTime = ge_time_format(data[i].createTime).split(" ");
+                        var createDate = createDateAndTime[0];
+                        var createTime = createDateAndTime[1];
+
+                        var loginDateAndTime = ge_time_format(data[i].loginTime).split(" ");
+                        var loginDate = loginDateAndTime[0];
+                        var loginTime = loginDateAndTime[1];
+
                         str += '<tr data-id = "' + data[i].id+'">' +
                             '<td class="wideTd">'+ data[i].id +'</td> ' +   //编号
                             '<td>'+ data[i].email +'</td> ' +  // 账号
-                            '<td><img src="' + data[i].avatar + '" class="img-circle" alt="图片加载失败"></td> ' +   // 头像
+                            '<td><img src="' + data[i].avatar + '" class="img-circle img-largen" alt="图片加载失败"></td> ' +   // 头像
                             '<td>'+ data[i].name +'</td> ' +  // 名字
                             '<td>'+ data[i].tel +'</td> ' +  // 电话
-                            '<td class="wideTd">'+ ge_time_format(data[i].loginTime) +'</td> ' +  // 创建时间
-                            '<td class="wideTd">'+ ge_time_format(data[i].createTime) +'</td> ' +  // 创建时间
+                            '<td class="wideTd date"> <p>'+ loginDate +'</p><p>'+ loginTime +'</p></td> ' +   //登录时间
+                            '<td class="wideTd date"> <p>'+ createDate +'</p><p>'+ createTime +'</p></td> ' +   //创建时间
                             '<td class="operateIcon">' +
                             '<a href="javascript:void (0)" class="deleteBtn"><i class="iconfont">&#xe601;</i></a>' +
                                 '<a href="javascript:void (0)" class="changeBtn ml-40"><i class="iconfont">&#xe630;</i></a>'+

@@ -608,8 +608,9 @@ a.btn{
 .storeHead .headInner .logo{
     width: 22.12%;
 }
-.storeHead .headInner .logo img{
-    width: 64%;
+.storeHead .headInner .logo i{
+    font-size: 4.2rem;
+    color: #fff;
 }
 
 .storeHead .headInner>div.fr{
@@ -861,7 +862,7 @@ text-align: center}
     border:none;
 }
 .pubList table tbody td img{
-    width: 50%;
+    width: 90%;
 }
 
 .pubList table td.operateIcon a i{
@@ -1305,6 +1306,10 @@ table .wideTd{
     word-break: break-all;
 }
 
+.pubList table tbody td.date{
+    font-size: 1.2rem;
+}
+
 
 /* 登录滑块样式 */
 
@@ -1364,6 +1369,23 @@ table.td-5 tr td{
 }
 table.td-10 tr td{
     width: 10%;
+}
+
+
+/* 点击图片放大 */
+.img-largen{
+    cursor: pointer;
+    transition: transform 0.5s;
+    -moz-transition: -moz-transform 0.5s;
+    -webkit-transition:  -webkit-transform 0.5s;
+    -o-transition: -o-transform 0.5s;
+}
+.img-largen.largen{
+    transform: scale(4,4);
+    -ms-transform: scale(4,4);	/* IE 9 */
+    -webkit-transform: scale(4,4);	/* Safari 和 Chrome */
+    -o-transform: scale(4,4);	/* Opera */
+    -moz-transform: scale(4,4);	/* Firefox */
 }
 
 

@@ -56,6 +56,10 @@ $("#submit").click(function () {
 
                     notie.alert(1, '上传成功!', 2);
 
+                    setTimeout(function () {
+                        window.location.href = "./search.html"
+                    },800)
+
                 }else{
                     notie.alert(3, '服务器繁忙，请稍后重试', 2);
                 }

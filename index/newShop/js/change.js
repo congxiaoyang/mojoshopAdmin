@@ -19,7 +19,6 @@ $(function () {
         url:"http://192.168.1.111:8081/manager/column/search",
         dataType:"json",
         data:{"id":thisId,"type":4},
-        timeout:5000,
         success:function (arr) {
 
             var data = arr.data;
@@ -118,6 +117,9 @@ $("#submit").click(function () {
                 if(arr.status==200){
 
                     notie.alert(1, '修改成功!', 2);
+                    setTimeout(function () {
+                        window.location.href = "./search.html";
+                    },800)
 
                 }else{
                     notie.alert(3, '服务器繁忙，请稍后重试', 2);

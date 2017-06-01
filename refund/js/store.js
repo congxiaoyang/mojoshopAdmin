@@ -17,7 +17,7 @@ function pageLoad(curr,searchCon) {
         dataType:"json",
         data:{
             "page":curr || 1,
-            "rows":2,    //显示的行数
+            "rows":20,    //显示的行数
             "search":searchCon
         },
         timeout:5000,

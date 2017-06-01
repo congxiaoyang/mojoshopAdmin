@@ -16,7 +16,7 @@ $(function () {
             var data = arr.data;
             if(arr.status == 200){
                 basicInfoEchart(data.user,data.store,data.goods,0);    //基本信息饼图
-                indexEchart(data.banner,data.abroad,data.life,data.fashion,data.social,data.newStore,data.weekly);
+                indexEchart(data.banner,data.abroad,data.live,data.fashion,data.social,data.newStore,data.weekly);
                 dealEchart(data.paid,data.NoPaid,data.trade,data.refund);
                 moneyEchart(data.payMoney,data.refundMoney);
                 sexEchart(data.man,data.woman);

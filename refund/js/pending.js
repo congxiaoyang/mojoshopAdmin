@@ -28,7 +28,7 @@ function pageLoad(curr,searchCon) {
         url:"http://192.168.1.111:8081/manager/order/waiting",
         dataType:"json",
         data:{"page":1,
-            "rows":2,
+            "rows":20,
             "id":thisId,
             "search":searchCon
         },
@@ -79,7 +79,7 @@ function pageLoad(curr,searchCon) {
                             '<td>'+ selection +'</td> ' +  // 账户类型
                             '<td>'+ data[i].name +'</td> ' +  // 真实姓名
                             '<td>'+ refund_status +'</td> ' +  // 退款状态
-                            '<td><img src="' + data[i].images + '" class="" alt="图片加载失败"></td> ' +  // 商品图片
+                            '<td><img src="' + data[i].images + '" class="img-largen" alt="图片加载失败"></td> ' +  // 商品图片
                             '<td>' + data[i].title + '</td> ' +  // 商品名称
 
                             '<td class="redMark">￥'+ data[i].money +'</td> ' +  // 金额

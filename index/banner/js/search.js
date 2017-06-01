@@ -12,7 +12,7 @@ function pageLoad(curr,putawayStatus) {
         dataType:"json",
         data:{
             "page":curr || 1,
-            "rows":2,    //显示的行数
+            "rows":20,    //显示的行数
             "status":putawayStatus
         },
         timeout:5000,
@@ -38,15 +38,22 @@ function pageLoad(curr,putawayStatus) {
                             dataStatus = "下架"
                         }
 
+                        var startDateAndTime = ge_time_format(data[i].startTime).split(" ");
+                        var startDate = startDateAndTime[0];
+                        var startTime = startDateAndTime[1];
+
+                        var endDateAndTime = ge_time_format(data[i].endTime).split(" ");
+                        var endDate = endDateAndTime[0];
+                        var endTime = endDateAndTime[1];
 
                         str += '<tr data-id = "' + data[i].id+'">' +
                                 '<td>'+ data[i].id+'</td>'+    //  编号
-                            '<td><img src="' + data[i].images + '" class="" alt="图片加载失败"></td> ' +   // banner
+                            '<td><img src="' + data[i].images + '" class="img-largen" alt="图片加载失败"></td> ' +   // banner
                             '<td class="redMark">¥'+ toDecimal2(data[i].price)+'</td>'+    //  广告价格
                             '<td class="redMark">¥'+ toDecimal2(data[i].signupMoney)+'</td>'+    //  报名费
                             '<td>'+ dataStatus +'</td> ' +  // 状态
-                            '<td class="wideTd">'+ ge_time_format(data[i].startTime) +'</td> ' +  // 开始时间
-                            '<td class="wideTd">'+ ge_time_format(data[i].endTime) +'</td> ' +  // 结束时间
+                            '<td class="wideTd date"><p>'+startDate+'</p><p>'+startTime+'</p></td> ' +  // 开始时间
+                            '<td class="wideTd date"><p>'+endDate+'</p><p>'+endTime+'</p></td> ' +  // 结束时间
                             '<td>'+ data[i].name +'</td>'+  //  管理员
                             '<td class="operateIcon">' +
                             '<a href="javascript:void (0)" style="margin-left: 0" class="deleteBtn"><i class="iconfont">&#xe601;</i></a>'+

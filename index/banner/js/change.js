@@ -23,9 +23,10 @@ $(function () {
             if(arr.status == 200){  // 200
 
                 $("#id").text(data.id);
-                $("#hostName").text(data.organizer);
-                $("#activityTheme").text(data.activityTheme);
-                $("#adMoney").text(data.price);
+                $("#hostName").val(data.organizer);
+                $("#activityTheme").val(data.activityTheme);
+                $("#activityAddr").val(data.address);
+                $("#adMoney").val(toDecimal2(data.price));
                 $("#signupMoney").val(toDecimal2(data.signupMoney));
                 $("#startTime").val(ge_time_format(data.startWithTime));
                 $("#endTime").val(ge_time_format(data.endWithTime));
@@ -201,6 +202,7 @@ $("#signupBtn").click(function () {
 $("#submit").click(function () {
 
     var entryFee = $("#signupMoney").val();  // 报名费
+    var adMoney = $("#ad_money").val();  // 广告费
 
     var status = $("#status").find("option:selected").val();  //状态
     var type = $("#type").find("option:selected").val();   // 类型
@@ -209,6 +211,9 @@ $("#submit").click(function () {
     var endTime = $("#endTime").val();   // 结束时间
 
     var hostIntro = $("#hostIntro").val();
+    var hostName = $("#hostName").val();
+    var activityTheme = $("#activityTheme").val();
+    var activityAddr = $("#activityAddr").val();
 
     var ueHtml = $(document.getElementById('baidu_editor_0').contentWindow.document.body).html();
 
@@ -263,13 +268,16 @@ $("#submit").click(function () {
                 "endWithTime":endTime,
 
                 "signupMoney":entryFee,   //报名费
+                "price":adMoney,  //广告价格
 
                 "status":status,  //状态
                 "occupy":type,  //类型
 
                 "details":ueHtml,  //富文本中输入的html代码
 
-
+                "organizer":hostName,
+                "activityTheme":activityTheme,
+                "address":activityAddr,
                 "title":hostIntro,   //举办方简介
                 "id":thisId
             },

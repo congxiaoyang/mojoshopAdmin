@@ -16,7 +16,7 @@ function pageLoad(curr) {
         dataType:"json",
         data:{
             "page":curr || 1,
-            "rows":2    //显示的行数
+            "rows":20    //显示的行数
         },
         timeout:5000,
         success:function (arr) {
@@ -48,7 +48,7 @@ function pageLoad(curr) {
                             '<td>'+ data[i].storeName +'</td> ' +  // 商家名称
                             '<td>'+ data[i].storeEmail +'</td> ' +  // 商品账号
                             '<td class="name">'+ data[i].content +'</td> ' +  // 投诉内容
-                            '<td><img src="' + data[i].images + '" alt="图片加载失败"></td> ' +  //  投诉图片
+                            '<td><img src="' + data[i].images + '" class="img-largen" alt="图片加载失败"></td> ' +  //  投诉图片
                             '<td> <p>'+ge_time_format(data[i].createTime)+'</p></td> ' +   //创建时间
                             '<td> ' +
                             '<a href="javascript:void (0)" class="operateIcon deleteBtn"><i class="iconfont">&#xe601;</i></a>' +
@@ -137,7 +137,7 @@ function searchPageLoad(curr,searchCon) {
         dataType:"json",
         data:{
             "page":curr || 1,
-            "rows":5,    //显示的行数
+            "rows":20,    //显示的行数
             "search":searchCon    // 搜索内容
         },
         success:function (arr) {
@@ -168,7 +168,7 @@ function searchPageLoad(curr,searchCon) {
                             '<td>'+ data[i].storeName +'</td> ' +  // 商家名称
                             '<td>'+ data[i].storeEmail +'</td> ' +  // 商品账号
                             '<td class="name">'+ data[i].content +'</td> ' +  // 投诉内容
-                            '<td><img src="' + data[i].images + '" alt="图片加载失败"></td> ' +  //  投诉图片
+                            '<td><img src="' + data[i].images + '" class="img-largen" alt="图片加载失败"></td> ' +  //  投诉图片
                             '<td> <p>'+ge_time_format(data[i].createTime)+'</p></td> ' +   //创建时间
                             '<td> ' +
                             '<a href="javascript:void (0)" class="operateIcon deleteBtn"><i class="iconfont">&#xe601;</i></a>' +

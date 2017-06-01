@@ -23,7 +23,7 @@ function pageLoad(curr,searchCon) {
         url:"http://192.168.1.111:8081/manager/order/store_wait_order",
         dataType:"json",
         data:{"page":1,
-            "rows":2,
+            "rows":20,
             "id":thisId,
             "search":searchCon
         },
@@ -179,6 +179,6 @@ tbody.delegate(".goSettled","click",function () {
         },
         cancelValue: '取消',
         title: '结算',
-        content: '结算之后不可恢复，确定要删除么'
+        content: '结算之后不可恢复，确定要结算么'
     });
 });

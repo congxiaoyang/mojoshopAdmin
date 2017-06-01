@@ -15,7 +15,7 @@ function pageLoad(curr,grageStatus,searchCon) {
         async:false,
         data:{
             "page":curr || 1,
-            "rows":2,    //显示的行数
+            "rows":20,    //显示的行数
             "search":searchCon,
             "status":grageStatus
         },
@@ -55,14 +55,18 @@ function pageLoad(curr,grageStatus,searchCon) {
                             feedbackType = "其他"
                         }
 
+                        var receivingDateAndTime = ge_time_format(data[i].createTime).split(" ");
+                        var receivingDate = receivingDateAndTime[0];
+                        var receivingTime = receivingDateAndTime[1];
+
                         str += '<tr data-id = "' + data[i].id+'">' +
                             '<td class="wideTd">'+ data[i].id +'</td> ' +   //编号
                             // '<td>'+ type +'</td> ' +   //分类
                             '<td>'+ feedbackType +'</td> ' +  // 反馈类型
-                            '<td><img src="' + data[i].images + '" class="img-circle" alt="图片加载失败"></td> ' +   // 图片
+                            '<td><img src="' + data[i].images + '" class="img-largen" alt="图片加载失败"></td> ' +   // 图片
                             '<td class="name" title="'+data[i].content+'">'+ data[i].content +'</td> ' +  // 反馈说明
                             '<td>'+ data[i].email +'</td> ' +  // 联系邮箱
-                            '<td class="wideTd">'+ ge_time_format(data[i].createTime) +'</td> ' +  // 创建时间
+                            '<td class="wideTd"><p>'+receivingDate +'</p><p>' + receivingTime +'</p></td> ' +  // 创建时间
                             '<td>'+ dataStatus +'</td> ' +  // 状态
                             '<td><a href="javascript:void (0)" class="deleteBtn"><i class="iconfont">&#xe601;</i></a></td>'+  // 操作
 

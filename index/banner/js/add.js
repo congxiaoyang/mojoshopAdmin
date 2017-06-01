@@ -63,10 +63,10 @@ $("#activityBg").click(function () {
 
         var file = this.files[0];
 
-        if (/image\/\w+/.test(file.type)&&this.files[0].size/1024<2048) {
+        if (/image\/\w+/.test(file.type)&&this.files[0].size/1024<4096) {
             $(this).siblings("img").attr("src", objUrl3) ; //将图片路径存入src中，显示出图片
         }else{
-            alert("请选择小于2M的图片");
+            alert("请选择小于4M的图片");
             return false;
         }
         var reader = new FileReader();
@@ -138,6 +138,7 @@ $("#submit").click(function () {
     var hostIntro = $("#hostIntro").val();   // 举办方简介
     var hostName = $("#hostName").val();   // 举办方名称
     var activityTheme = $("#activityTheme").val();   // 活动主题
+    var activityAddr = $("#activityAddr").val();  // 举办地点
 
     var ueHtml = $(document.getElementById('baidu_editor_0').contentWindow.document.body).html();
 
@@ -168,6 +169,7 @@ $("#submit").click(function () {
                 "content":ueHtml,  //富文本中输入的html代码
                 "organizer":hostName,
                 "activityTheme":activityTheme,
+                "address":activityAddr,
                 "title":hostIntro   //举办方简介
             },
             success:function (arr) {

@@ -16,7 +16,7 @@ function pageLoad(curr,putawayStatus) {
         dataType:"json",
         data:{
             "page":curr || 1,
-            "rows":2,    //显示的行数
+            "rows":20,    //显示的行数
             "status":putawayStatus
         },
         timeout:5000,
@@ -36,10 +36,12 @@ function pageLoad(curr,putawayStatus) {
                     for(var i in data){
 
                         var dataStatus;     // 签收状态
+                        var color= "";
                         if(data[i].status == 1){
-                            dataStatus = "停用"
+                            dataStatus = "停用";
+                            color = "redMark";
                         }else{
-                            dataStatus = "正常"
+                            dataStatus = "正常";
                         }
 
 
@@ -50,18 +52,33 @@ function pageLoad(curr,putawayStatus) {
                             sex = "女"
                         }
 
+                        var city;
+                        if(data[i].city==null){
+                            city = "-";
+                        }else{
+                            city = data[i].city;
+                        }
+
+                        var createDateAndTime = ge_time_format(data[i].createTime).split(" ");
+                        var createDate = createDateAndTime[0];
+                        var createTime = createDateAndTime[1];
+
+                        var loginDateAndTime = ge_time_format(data[i].loginTime).split(" ");
+                        var loginDate = loginDateAndTime[0];
+                        var loginTime = loginDateAndTime[1];
+
                         str += '<tr data-id = "' + data[i].id+'">' +
                             '<td class="wideTd">'+ data[i].id +'</td> ' +   //编号
                             '<td>'+ data[i].niceName +'</td> ' +   //昵称
-                            '<td><img src="' + data[i].avatar + '" class="img-circle" alt="图片加载失败"></td> ' +  //  头像
-                            '<td>'+ data[i].email +'</td> ' +  // 邮箱
+                            '<td><img src="' + data[i].avatar + '" class="img-circle img-largen" alt="图片加载失败"></td> ' +  //  头像
+                            '<td class="wideTd">'+ data[i].email +'</td> ' +  // 邮箱
                             '<td>'+ sex +'</td> ' +  // 性别
                             '<td>'+ data[i].grades +'</td> ' +  // 等级
-                            '<td>'+ data[i].city +'</td> ' +  // 城市
+                            '<td>'+ city +'</td> ' +  // 城市
 
-                            '<td class="wideTd" title="'+ ge_time_format(data[i].loginTime)+'"> <p>'+ge_time_format(data[i].loginTime)+'</p></td> ' +   //登录时间
-                            '<td class="wideTd" title="'+ ge_time_format(data[i].createTime) +'"> <p>'+ge_time_format(data[i].createTime)+'</p></td> ' +   //创建时间
-                            '<td>'+ dataStatus +'</td>'+  // 状态
+                            '<td class="wideTd date"> <p>'+ loginDate +'</p><p>'+ loginTime +'</p></td> ' +   //登录时间
+                            '<td class="wideTd date"> <p>'+ createDate +'</p><p>'+ createTime +'</p></td> ' +   //创建时间
+                            '<td class="'+color+'">'+ dataStatus +'</td>'+  // 状态
                             '<td> ' +
                             '<a href="javascript:void (0)" class="operateIcon deleteBtn"><i class="iconfont">&#xe601;</i></a>' +
                             '<a href="#" class="changeBtn ml-10"><i class="iconfont">&#xe630;</i></a>' +
@@ -161,7 +178,7 @@ function searchPageLoad(curr,putawayStatus,searchCon) {
         dataType:"json",
         data:{
             "page":curr || 1,
-            "rows":2,    //显示的行数
+            "rows":20,    //显示的行数
             "status":putawayStatus,
             "search":searchCon    // 搜索内容
         },
@@ -180,10 +197,12 @@ function searchPageLoad(curr,putawayStatus,searchCon) {
                     for(var i in data){
 
                         var dataStatus;     // 签收状态
+                        var color="";
                         if(data[i].status == 1){
-                            dataStatus = "正常"
+                            dataStatus = "正常";
                         }else{
-                            dataStatus = "异常"
+                            dataStatus = "异常";
+                            color = "redMark";
                         }
 
 
@@ -205,7 +224,7 @@ function searchPageLoad(curr,putawayStatus,searchCon) {
 
                             '<td> <p>'+ge_time_format(data[i].loginTime)+'</p></td> ' +   //登录时间
                             '<td> <p>'+ge_time_format(data[i].createTime)+'</p></td> ' +   //创建时间
-                            '<td>'+ dataStatus +'</td>'+  // 状态
+                            '<td class="'+color+'">'+ dataStatus +'</td>'+  // 状态
                             '<td> ' +
                             '<a href="javascript:void (0)" class="operateIcon deleteBtn"><i class="iconfont">&#xe601;</i></a>' +
                             '<a href="#" class="changeBtn"><i class="iconfont">&#xe630;</i></a>' +

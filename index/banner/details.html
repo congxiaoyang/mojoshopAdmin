@@ -85,21 +85,28 @@
                             <div class="form-group clearfix">
                                 <label for="">举办方名称：</label>
                                 <div>
-                                    <p id="hostName"></p>
+                                    <input  type="text" id="hostName">
                                 </div>
                             </div>
 
                             <div class="form-group clearfix">
                                 <label for="">活动主题：</label>
                                 <div>
-                                    <p id="activityTheme"></p>
+                                    <input type="text" id="activityTheme">
+                                </div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="">举办地点：</label>
+                                <div>
+                                    <input type="text" id="activityAddr">
                                 </div>
                             </div>
 
                             <div class="form-group clearfix">
                                 <label for="">广告价格：</label>
                                 <div>
-                                    <p class="redMark">¥<span id="adMoney"></span></p>
+                                    <p class="redMark">¥<input type="text" value="2000.00" id="adMoney" class="float_price" maxlength="10" onkeyup='checkDecimal(this)'></p>
                                 </div>
                             </div>
 
@@ -178,7 +185,7 @@
                     <div class="item item5 mt-50">
                         <h5 class="title">举办方简介</h5>
                         <div class="content text-left">
-                            <textarea id="hostIntro" class="wid-100"></textarea>
+                            <textarea id="hostIntro" maxlength="200" class="wid-100"></textarea>
                         </div>
                     </div>
 

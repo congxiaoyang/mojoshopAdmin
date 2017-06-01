@@ -18,7 +18,7 @@ function pageLoad(curr,storeStatus,searchCon) {
         async:false,
         data:{
             "page":curr || 1,
-            "rows":50,    //显示的行数
+            "rows":20,    //显示的行数
             "status":storeStatus,
             "search":searchCon
         },

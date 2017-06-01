@@ -71,7 +71,7 @@ $.extend({'headLoad':function (src) {
         '<div class="col-lg-4 col-md-4 col-sm-4 userImg text-center"> <img src="' + src +'public/images/userAvatar.png" alt=""> ' +
         '</div>' +
         ' <div class="col-lg-4 col-md-4 col-sm-4 text-right"> ' +
-        '<a href="javascript:void (0)" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="userName" >的吗西亚</span>  <i class="iconfont">&#xe62d;</i></a> <ul class="dropdown-menu"> <li><a href="' + src+'login/retrievePwd.html">更改密码</a></li> </ul> </div> </div> </div>'
+        '<a href="javascript:void (0)" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="userName" >的吗西亚</span>  <i class="iconfont">&#xe62d;</i></a> <ul class="dropdown-menu"> <li><a href="' + src+'login/retrievePwd.html">更改密码</a></li> <li><a href="' + src+'login/retrievePwd.html">退出登录</a></li> </ul> </div> </div> </div>'
 
     $(".storeHead").html(publicHead);
 }});
@@ -82,9 +82,7 @@ $.extend({'headLoad':function (src) {
 
 $(function () {
     load();
-})
-
-
+});
 
 $(window).resize(function () {
     load();
@@ -215,11 +213,15 @@ function toDecimal2(x) {
     return s;
 }
 
-
-
 //  商品价格输入焦点消失时，自动补上 .00
 
 $(".float_price").blur(function () {
     var price = $(this).val();
     $(this).val(toDecimal2(price));
+});
+
+// 鼠标划过，图片放大
+
+$(".pubList").delegate(".img-largen","click",function () {
+   $(this).toggleClass("largen");
 });

@@ -17,7 +17,7 @@ function pageLoad(curr,searchCon) {
         dataType:"json",
         data:{
             "page":curr || 1,
-            "rows":2,    //显示的行数
+            "rows":20,    //显示的行数
             "search":searchCon
         },
         timeout:5000,
@@ -47,22 +47,29 @@ function pageLoad(curr,searchCon) {
 
 
                         var store_status;     // 运营状态
+                        var color="";
                         if(data[i].status == 0){
                             store_status = "正常"
                         }else{
-                            store_status = "停用"
+                            store_status = "停用";
+                            color = "redMark";
+
                         }
+
+                        var loginDateAndTime = ge_time_format(data[i].loginTime).split(" ");
+                        var loginDate = loginDateAndTime[0];
+                        var loginTime = loginDateAndTime[1];
 
                         str += '<tr data-id = "' + data[i].storeId+'">' +
                             '<td class="wideTd">'+ data[i].storeId +'</td> ' +   //编号
                             '<td>'+ type +'</td> ' +   //分类
-                            '<td><img src="' + data[i].logo + '" class="img-circle" alt="图片加载失败"></td> ' +  //  logo
+                            '<td><img src="' + data[i].logo + '" class="img-circle img-largen" alt="图片加载失败"></td> ' +  //  logo
                             '<td>'+ data[i].storeName +'</td> ' +  // 名称
                             '<td>'+ data[i].name +'</td> ' +  // 姓名
                             '<td>'+ data[i].tel +'</td> ' +  // phone
 
-                            '<td class="wideTd" title="'+ ge_time_format(data[i].loginTime)+'"> <p>'+ge_time_format(data[i].loginTime)+'</p></td> ' +   //登录时间
-                            '<td>'+ store_status +'</td>'+  // 状态
+                            '<td class="wideTd"> <p>'+loginDate +'</p><p>'+loginTime+'</p></td> ' +   //登录时间
+                            '<td class="'+ color +'">'+ store_status +'</td>'+  // 状态
                             '<td> ' +
                             '<a href="#" class="changeBtn ml-10"><i class="iconfont">&#xe630;</i></a>' +
                             '</td> ' +

@@ -1,6 +1,7 @@
 /**
- * Created by dell on 2017/4/21.
+ * Created by dell on 2017/5/28.
  */
+
 
 // 从上一个网页接收传递来的id
 
@@ -17,20 +18,19 @@ var tbody = $("#search_tbody");
 
 //  读取订单的详细信息
 
-function pageLoad(curr,searchCon) {
+function pageLoad(curr) {
     $.ajax({
         type:"post",
-        url:"http://192.168.1.111:8081/manager/order/store_order",
+        url:"http://192.168.1.111:8081/manager/organizer/settled_order",
         dataType:"json",
         data:{"page":1,
             "rows":20,
-            "id":thisId,
-            "search":searchCon
+            "id":thisId
         },
         timeout:5000,
         success:function (arr) {
             var status = arr.status;  // 返回状态值
-            var data = arr.data.order;   //  数据
+            var data = arr.data.eventUser;   //  数据
 
             var str;
             tbody.html("");
@@ -39,9 +39,6 @@ function pageLoad(curr,searchCon) {
                 if(data == ""){
                     notie.alert(2, '暂无数据', 2);
                 }else{
-
-                    $("#storeName").text(arr.data.storeinfo[0].storeName);
-                    $("#storePhone").text(arr.data.storeinfo[0].tel);
 
                     for(var i in data){
 
@@ -52,32 +49,13 @@ function pageLoad(curr,searchCon) {
                             payWay = "支付宝";
                         }
 
-
-                        var order_status;     // 运营状态
-                        if(data[i].settlemen == 1){
-                            order_status = "已结算"
-                        }else{
-                            order_status = "未结算"
-                        }
-
                         str += '<tr data-id = "' + data[i].id+'">' +
-                            '<td class="wideTd">'+ data[i].id +'</td> ' +   //订单号
-                            '<td class="wideTd">'+ data[i].oid +'</td> ' +   //交易号
-                            '<td>'+ data[i].title +'</td> ' +  // 商品名称
-                            '<td><img src="' + data[i].images + '" class="" alt="图片加载失败"></td> ' +  // 商品图片
-                            '<td>'+ data[i].userName +'</td> ' +  // 用户昵称
-                            '<td>'+ data[i].userCode +'</td> ' +  // 用户账号
-                            '<td>'+ data[i].counts +'</td> ' +  // 数量
-                            '<td class="redMark">￥'+ data[i].money +'</td> ' +  // 金额
-                            '<td>'+ ge_time_format(data[i].createTime) +'</td> ' +  // 下单时间
-                            // '<td>'+ order_status +'</td> ' +  // 状态
-                            '<td>'+ ge_time_format(data[i].receivingTime) +'</td> ' +  // 收获时间
-                            '<td>'+ order_status +'</td> ' +  // 结算状态
-                            '<td>'+ ge_time_format(data[i].settlemenTime) +'</td> ' +  // 结算时间
+                            '<td class="wideTd">'+ data[i].tradeNo +'</td> ' +   //交易号
                             '<td>'+ payWay +'</td> ' +  // 支付方式
-
-                            '<td> - </td> ' +
-
+                            '<td class="redMark">￥'+ data[i].money +'</td> ' +  // 金额
+                            '<td>'+ data[i].niceName +'</td> ' +  // 用户昵称
+                            '<td>'+ data[i].activityTheme +'</td> ' +  // 活动主题
+                            '<td>'+ ge_time_format(data[i].createTime) +'</td> ' +  // 下单时间
 
                             '</tr>';
                     }
@@ -95,7 +73,7 @@ function pageLoad(curr,searchCon) {
                 curr: curr || 1, //当前页
                 jump: function(obj, first){ //触发分页后的回调
                     if(!first){ //点击跳页触发函数自身，并传递当前页：obj.curr
-                        pageLoad(obj.curr,searchCon);
+                        pageLoad(obj.curr);
                     }
                 },
                 first:false,
@@ -109,29 +87,6 @@ function pageLoad(curr,searchCon) {
 }
 
 $(function () {
-    pageLoad(1,"")
+    pageLoad(1)
 });
 
-
-
-//  点击搜索  按条件搜索
-$(".searchIcon a").click(function () {
-    var searchCon = $("#search").val();
-    pageLoad(1,searchCon);
-});
-
-
-$("#search").keyup(function(event){
-    if(event.keyCode == 13){
-        var searchCon = $("#search").val();
-        pageLoad(1,searchCon);
-    }
-});
-
-//  监听搜索框中的值，如果值为空，重新请求
-
-$('#search').bind('input propertychange', function() {
-    if($(this).val()==""){
-        pageLoad(1,"");
-    }
-});
